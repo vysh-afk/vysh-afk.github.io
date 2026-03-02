@@ -1,57 +1,64 @@
-// ================= Theme Toggle =================
-const body = document.body;
-const btnTheme = document.getElementById("btn-theme");
+const body = document.body
 
-const savedTheme = localStorage.getItem("portfolio-theme") || "light";
-body.classList.add(savedTheme);
-btnTheme.firstElementChild.className = savedTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+const btnTheme = document.getElementById('btn-theme')
+const btnHamburger = document.querySelector('.fa-bars')
 
-btnTheme.addEventListener("click", () => {
-  if(body.classList.contains("light")){
-    body.classList.replace("light","dark");
-    btnTheme.firstElementChild.className = "fas fa-sun";
-    localStorage.setItem("portfolio-theme","dark");
+const addThemeClass = (bodyClass, btnClass) => {
+  body.classList.add(bodyClass)
+  btnTheme.classList.add(btnClass)
+}
+
+const getBodyTheme = localStorage.getItem('portfolio-theme')
+const getBtnTheme = localStorage.getItem('portfolio-btn-theme')
+
+if (getBodyTheme && getBtnTheme) {
+  addThemeClass(getBodyTheme, getBtnTheme)
+}
+
+const isDark = () => body.classList.contains('dark')
+
+const setTheme = (bodyClass, btnClass) => {
+  body.classList.remove(localStorage.getItem('portfolio-theme'))
+  btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
+
+  addThemeClass(bodyClass, btnClass)
+
+  localStorage.setItem('portfolio-theme', bodyClass)
+  localStorage.setItem('portfolio-btn-theme', btnClass)
+}
+
+const toggleTheme = () =>
+  isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun')
+
+btnTheme.addEventListener('click', toggleTheme)
+
+const displayList = () => {
+  const navUl = document.querySelector('.nav__list')
+
+  if (btnHamburger.classList.contains('fa-bars')) {
+    btnHamburger.classList.remove('fa-bars')
+    btnHamburger.classList.add('fa-times')
+    navUl.classList.add('display-nav-list')
   } else {
-    body.classList.replace("dark","light");
-    btnTheme.firstElementChild.className = "fas fa-moon";
-    localStorage.setItem("portfolio-theme","light");
-  }
-});
-
-// ================= Typing Effect =================
-const typingText = document.getElementById("typing-text");
-const nameText = "Vyshnavi Dinesh.";
-let index = 0;
-function type() {
-  if(index < nameText.length){
-    typingText.innerHTML += nameText.charAt(index);
-    index++;
-    setTimeout(type, 120);
+    btnHamburger.classList.remove('fa-times')
+    btnHamburger.classList.add('fa-bars')
+    navUl.classList.remove('display-nav-list')
   }
 }
-type();
 
-// ================= GitHub Projects =================
-const githubUsername = "vysh-afk";
-const projectsContainer = document.getElementById("github-projects");
-if(projectsContainer){
-  fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`)
-  .then(res=>res.json())
-  .then(repos=>{
-    repos.slice(0,6).forEach(repo=>{
-      const div = document.createElement("div");
-      div.className = "project";
-      div.innerHTML = `
-        <h3>${repo.name.replace(/-/g,' ')}</h3>
-        <p class="project__description">${repo.description || "No description available."}</p>
-        <ul class="project__stack"><li class="project__stack-item">GitHub Repo</li></ul>
-        <a href="${repo.html_url}" class="link link--icon" target="_blank"><i class="fab fa-github"></i></a>
-      `;
-      projectsContainer.appendChild(div);
-    });
-  })
-  .catch(err=>{
-    projectsContainer.innerHTML="<p>Unable to load GitHub projects.</p>";
-    console.error(err);
-  });
+btnHamburger.addEventListener('click', displayList)
+
+const scrollUp = () => {
+  const btnScrollTop = document.querySelector('.scroll-top')
+
+  if (
+    body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    btnScrollTop.style.display = 'block'
+  } else {
+    btnScrollTop.style.display = 'none'
+  }
 }
+
+document.addEventListener('scroll', scrollUp)
