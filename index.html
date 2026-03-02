@@ -1,84 +1,185 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vyshnavi Dinesh | AI Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Vyshnavi Dinesh Portfolio" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
-<script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="styles.css" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<body class="light" id="top">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-<header class="header center">
-  <h3><a href="#" class="link">VD.</a></h3>
-  <nav class="nav center">
-    <ul class="nav__list center">
-      <li><a class="link link--nav" href="#projects">Projects</a></li>
-      <li><a class="link link--nav" href="#skills">Skills</a></li>
-      <li><a class="link link--nav" href="#contact">Contact</a></li>
-    </ul>
-    <button id="btn-theme" class="btn btn--icon"><i class="fas fa-moon"></i></button>
-  </nav>
-</header>
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
 
-<main>
-  <!-- ABOUT -->
-  <div class="about center">
-    <div class="about__content">
-      <h1>Hi, I am <span class="about__name" id="typing-text"></span></h1>
-      <h2 class="about__role">Artificial Intelligence Student | Embedded Systems Minor</h2>
-      <p class="about__desc">
-        AI undergraduate at Deakin University with experience in Machine Learning, Deep Learning, NLP, SQL, and data handling.
-        Currently working as a Telehealth Administrator at Eastern Health, managing workflows and data operations.
-        Previously tutored students at <strong>Ezy Math</strong>, supporting learning in mathematics.
-        Passionate about applying AI solutions to real-world healthcare challenges.
-      </p>
-      <div class="about__contact center">
-        <a href="assets/resume.pdf"><span class="btn btn--outline">Resume</span></a>
-        <a href="https://github.com/vysh-afk" class="link link--icon" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/vyshnavi-dinesh-347349289/" class="link link--icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Vyshnavi Dinesh</title>
+  </head>
+
+  <body class="light" id="top">
+    <header class="header center">
+      <h3>
+        <a href="#" class="link">VD.</a>
+      </h3>
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#projects">Projects</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#skills">Skills</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <button type="button" class="btn btn--icon">
+          <i id="btn-theme" class="fas fa-moon"></i>
+        </button>
+
+        <button type="button" class="btn btn--icon nav__hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- About -->
+      <div class="about center">
+        <h1>Hi, I am <span class="about__name">Vyshnavi Dinesh.</span></h1>
+        <h2 class="about__role">
+          Artificial Intelligence Student | Embedded Systems Minor
+        </h2>
+
+        <p class="about__desc">
+          I am currently working as a Telehealth Administrative Officer at
+          Eastern Health and have experience as a tutor at Ezy Math Tutoring.
+          I am passionate about Artificial Intelligence, Machine Learning,
+          Deep Learning, Natural Language Processing, and building real-world
+          data-driven solutions.
+        </p>
+
+        <div class="about__contact center">
+          <a href="#">
+            <span class="btn btn--outline">Resume</span>
+          </a>
+
+          <a
+            href="https://github.com/vysh-afk"
+            class="link link--icon"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            class="link link--icon"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <section id="projects" class="section projects">
+        <h2 class="section__title">Projects</h2>
+
+        <div class="projects__grid">
+          <div class="project">
+            <h3>AI Chatbot</h3>
+            <p class="project__description">
+              Built a chatbot using NLP techniques to process and respond
+              to user queries efficiently.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Python</li>
+              <li class="project__stack-item">NLP</li>
+              <li class="project__stack-item">Machine Learning</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <h3>Data Analysis Dashboard</h3>
+            <p class="project__description">
+              Developed a dashboard for visualising structured datasets
+              using SQL and Python.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">SQL</li>
+              <li class="project__stack-item">Python</li>
+              <li class="project__stack-item">Data Visualisation</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <h3>Embedded Systems Project</h3>
+            <p class="project__description">
+              Implemented a microcontroller-based system integrating
+              sensors and real-time data processing.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">C</li>
+              <li class="project__stack-item">Microcontrollers</li>
+              <li class="project__stack-item">Hardware Integration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section skills" id="skills">
+        <h2 class="section__title">Skills</h2>
+        <ul class="skills__list">
+          <li class="skills__list-item btn btn--plain">Python</li>
+          <li class="skills__list-item btn btn--plain">C#</li>
+          <li class="skills__list-item btn btn--plain">SQL</li>
+          <li class="skills__list-item btn btn--plain">Machine Learning</li>
+          <li class="skills__list-item btn btn--plain">Deep Learning</li>
+          <li class="skills__list-item btn btn--plain">NLP</li>
+          <li class="skills__list-item btn btn--plain">Embedded Systems</li>
+          <li class="skills__list-item btn btn--plain">Git</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section class="section contact center" id="contact">
+        <h2 class="section__title">Contact</h2>
+
+        <div class="contact__buttons">
+          <a href="mailto:your@email.com">
+            <span class="btn btn--outline">Email me</span>
+          </a>
+
+          <a href="https://www.linkedin.com/" target="_blank">
+            <span class="btn btn--outline">Connect on LinkedIn</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__link">© 2026 Vyshnavi Dinesh</p>
+    </footer>
+
+    <div class="scroll-container">
+      <div class="scroll-top">
+        <a href="#top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
       </div>
     </div>
-  </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section projects">
-    <h2 class="section__title">Projects</h2>
-    <div id="github-projects" class="projects__grid"></div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="section skills" id="skills">
-    <h2 class="section__title">Skills</h2>
-    <ul class="skills__list">
-      <li class="btn btn--plain">Python</li>
-      <li class="btn btn--plain">C#</li>
-      <li class="btn btn--plain">SQL</li>
-      <li class="btn btn--plain">Machine Learning</li>
-      <li class="btn btn--plain">Deep Learning</li>
-      <li class="btn btn--plain">NLP</li>
-      <li class="btn btn--plain">Embedded Systems</li>
-      <li class="btn btn--plain">Data Handling</li>
-      <li class="btn btn--plain">Troubleshooting</li>
-      <li class="btn btn--plain">Git</li>
-    </ul>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact center" id="contact">
-    <h2 class="section__title">Contact</h2>
-    <a href="mailto:vyshnavidinesh494@gmail.com"><span class="btn btn--outline">Email Me</span></a>
-    <a href="https://www.linkedin.com/in/vyshnavi-dinesh-347349289/" target="_blank"><span class="btn btn--outline">Connect on LinkedIn</span></a>
-  </section>
-</main>
-
-<footer class="footer">
-  <a class="link footer__link">© Vyshnavi Dinesh</a>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
